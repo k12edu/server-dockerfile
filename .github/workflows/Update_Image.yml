@@ -25,7 +25,7 @@ jobs:
 
     - name: Build server images
       run: |
-        docker build --pull --no-cache -f dockerfile.api -t tsukisama9292/server:django-rolling .
+        docker build --pull --no-cache -f dockerfile.django -t tsukisama9292/server:django-rolling .
         docker build --pull --no-cache -f dockerfile.nginx -t tsukisama9292/server:nginx-rolling .
         docker build --pull --no-cache -f dockerfile.redis -t tsukisama9292/server:redis-rolling .
 
