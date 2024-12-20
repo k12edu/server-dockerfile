@@ -35,23 +35,6 @@ jobs:
         docker push tsukisama9292/server:nginx-rolling
         docker push tsukisama9292/server:redis-rolling
     
-    # - name: Prune Docker builder cache
-    #   run: docker builder prune -a -f
-
-    # - name: Prune all Docker resources
-    #   run: docker system prune -a -f
-    
-    - name: Build judge images
-      run: |
-        docker build --pull --no-cache -f dockerfile.cpp -t tsukisama9292/judge:cpp-rolling .
-        docker build --pull --no-cache -f dockerfile.python -t tsukisama9292/judge:python-rolling .
-        docker build --pull --no-cache -f dockerfile.java -t tsukisama9292/judge:java-rolling .
-
-    - name: Push the Docker image to Docker Hub
-      run: |
-        docker push tsukisama9292/judge:cpp-rolling
-        docker push tsukisama9292/judge:python-rolling
-        docker push tsukisama9292/judge:java-rolling
 
   # pull-image:
   #   runs-on: self-hosted
@@ -63,6 +46,3 @@ jobs:
   #       docker pull tsukisama9292/server:django-rolling
   #       docker pull tsukisama9292/server:nginx-rolling
   #       docker pull tsukisama9292/server:redis-rolling
-  #       docker pull tsukisama9292/judge:cpp-rolling
-  #       docker pull tsukisama9292/judge:python-rolling
-  #       docker pull tsukisama9292/judge:java-rolling
