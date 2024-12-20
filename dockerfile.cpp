@@ -1,4 +1,4 @@
-FROM ubuntu:jammy-20240808
+FROM ubuntu:22.04
 
 # 更新
 RUN apt update && \
